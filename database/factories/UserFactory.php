@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Enums\UserRoleEnum;
+use App\Models\Company;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -20,8 +22,16 @@ class UserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
-            'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => fake()->password,
+            'role'=>fake()->randomElement(UserRoleEnum::asArray()),
+//            'role' => $this->faker->randomElement(UserRoleEnum::getValues()),
+            'bio' => fake()->boolean ? fake()->realText : null, //Có chỗ có bio có chỗ không
+            'position' => fake()->jobTitle(),
+            'gender' => fake()->boolean(),
+            'phone' => fake()->phoneNumber(),
+            'link' => fake()->boolean ? fake()->url : null,
+            'city' => fake()->city(),
+            'company_id' => Company::query()->inRandomOrder()->value('id'),
             'remember_token' => Str::random(10),
         ];
     }
