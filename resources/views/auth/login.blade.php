@@ -13,11 +13,11 @@
     <!-- App css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css"/>
     <link href="assets/css/app-creative.min.css" rel="stylesheet" type="text/css" id="light-style"/>
-{{--    <link href="assets/css/app-creative-dark.min.css" rel="stylesheet" type="text/css" id="dark-style"/>--}}
+    <link href="assets/css/app-creative-dark.min.css" rel="stylesheet" type="text/css" id="dark-style"/>
 
 </head>
 
-<body class="authentication-bg pb-0" data-layout-config='{"darkMode":false}'>
+<body class="authentication-bg pb-0" data-layout-config='{"darkMode":true}'>
 
 <div class="auth-fluid">
     <!--Auth fluid left content -->
@@ -57,11 +57,16 @@
                     <div class="text-center mt-4">
                         <p class="text-muted font-16">Sign in with</p>
                         <ul class="social-list list-inline mt-3">
-
                             <li class="list-inline-item">
-                                <a href="javascript: void(0);" class="social-list-item border-secondary text-secondary"><i
+                                <a href="{{route('auth.redirect','github')}}"
+                                   class="social-list-item border-primary text-primary"><i
                                         class="mdi mdi-github-circle"></i></a>
+                            </li><li class="list-inline-item">
+                                <a href="{{route('auth.redirect','google')}}"
+                                   class="social-list-item border-primary text-primary"><i
+                                        class="mdi mdi-google"></i></a>
                             </li>
+
                         </ul>
                     </div>
                 </form>
@@ -69,8 +74,7 @@
 
                 <!-- Footer-->
                 <footer class="footer footer-alt">
-                    <p class="text-muted">Don't have an account? <a href="pages-register-2.html"
-                                                                    class="text-muted ml-1"><b>Sign Up</b></a></p>
+                    <p class="text-muted">Don't have an account? <a href="{{ route('register') }}" class="text-muted ml-1"><b>Sign Up</b></a></p>
                 </footer>
 
             </div> <!-- end .card-body -->
