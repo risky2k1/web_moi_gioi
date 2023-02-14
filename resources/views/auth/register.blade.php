@@ -38,6 +38,15 @@
                 <!-- title-->
                 <h4 class="mt-0">Free Sign Up</h4>
                 <p class="text-muted mb-4">Don't have an account? Create your account, it takes less than a minute</p>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <!-- form -->
                 <form action="{{ route('registering') }}" method="post">
                     @csrf
@@ -53,7 +62,7 @@
                         <div class="form-group">
                             <label for="password">Password</label>
                             <input class="form-control" type="password" required id="password"
-                                   placeholder="Enter your password">
+                                   placeholder="Enter your password" name="password">
                         </div>
                         <div class="form-group">
                             <label for="password">Avatar</label>
@@ -78,7 +87,16 @@
                                    placeholder="Enter your password" name="password">
                         </div>
                     @endguest
-
+                    <div class="form-group">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="applicant" name="role" value="1">
+                            <label class="custom-control-label" for="applicant">APPLICANT</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" class="custom-control-input" id="hr" name="role" value="2">
+                            <label class="custom-control-label" for="hr">HR</label>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="checkbox-signup">
