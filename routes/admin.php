@@ -15,4 +15,6 @@ Route::group([
     'prefix' => 'users',
     ],function (){
     Route::get('/',[UserController::class,'index'])->name('index');
+    Route::get('/{id}',[UserController::class,'show'])->name('show');
+    Route::delete('/{id}',[UserController::class,'destroy'])->name('destroy');
 });

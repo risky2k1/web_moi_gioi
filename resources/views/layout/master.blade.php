@@ -39,7 +39,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box">
-                            <h4 class="page-title">{{$title}}</h4>
+                            <h4 class="page-title">{{$title ?? ''}}</h4>
                         </div>
                     </div>
                 </div>
@@ -64,8 +64,9 @@
 <!-- END wrapper -->
 
 <!-- bundle -->
-<script src="assets/js/vendor.min.js"></script>
-<script src="assets/js/app.min.js"></script>
+<script src="{{asset('assets/js/vendor.min.js')}}"></script>
+<script src="{{asset('assets/js/app.min.js')}}"></script>
+@stack('js')
 
 </body>
 </html>
