@@ -32,8 +32,6 @@
 
                             <!--- Sidemenu -->
                             <ul class="metismenu side-nav mm-show">
-
-
                                 <li class="side-nav-item">
                                     <a href="{{route('admin.users.index')}}" class="side-nav-link" aria-expanded="false">
                                         <i class="uil-home-alt"></i>
@@ -41,8 +39,13 @@
                                     </a>
 
                                 </li>
+                                <li class="side-nav-item">
+                                    <a href="{{route('admin.posts.index')}}" class="side-nav-link" aria-expanded="false">
+                                        <i class="uil-home-alt"></i>
+                                        <span> Posts </span>
+                                    </a>
 
-
+                                </li>
                             </ul>
 
 
