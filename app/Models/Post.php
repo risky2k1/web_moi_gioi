@@ -2,11 +2,22 @@
 
 namespace App\Models;
 
+use App\Enums\PostCurrencySalaryEnum;
 use App\Enums\PostStatusEnum;
+use BenSampo\Enum\Exceptions\InvalidEnumMemberException;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
+use Illuminate\Support\Str;
 
+
+/**
+ * @property mixed $currency_salary
+ * @property mixed $status
+ */
 class Post extends Model
 {
     use HasFactory;
@@ -30,6 +41,10 @@ class Post extends Model
         "is_pinned",
         "slug",
     ];
+//    protected $appends = [
+//        'currency_salary_code',
+//    ];
+
     protected static function booted(): void
     {
         static::creating(static function ($object) {
@@ -44,4 +59,23 @@ class Post extends Model
             ]
         ];
     }
+
+
+    /**
+     * @throws InvalidEnumMemberException
+     *
+     */
+    public function getCurrencySalaryCodeAttribute(): string
+    {
+        return PostCurrencySalaryEnum::getKey($this->currency_salary);
+    }
+
+    /**
+     * @throws InvalidEnumMemberException
+     */
+    public function getStatusNameAttribute(): string
+    {
+        return PostStatusEnum::getKey($this->status);
+    }
+
 }

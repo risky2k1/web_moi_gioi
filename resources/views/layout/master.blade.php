@@ -66,6 +66,7 @@
 <!-- bundle -->
 <script src="{{asset('assets/js/vendor.min.js')}}"></script>
 <script src="{{asset('assets/js/app.min.js')}}"></script>
+<script src="{{asset('assets/js/helper.js')}}"></script>
 @stack('js')
 
 </body>

@@ -10,6 +10,10 @@
                     </a>
                     <label for="csv" class="btn btn-success mb-0">Import CSV</label>
                     <input type="file" name="csv" id="csv" class="d-none" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel">
+                    <nav class="float-right">
+                        <ul class="pagination pagination-rounded mb-0" id="pagination">
+                        </ul>
+                    </nav>
                 </div>
                 <div class="card-body">
                     <table class="table table-striped" id="table-data">
@@ -37,22 +41,52 @@
     </div>
 @endsection
 
-
 @push('js')
     <script>
-        {{--$(document).ready(function () {--}}
-        {{--    $.ajax({--}}
-        {{--        url: "{{route('api.posts')}}",--}}
-        {{--        data: "data",--}}
-        {{--        dataType: "json",--}}
-        {{--        success: function (response) {--}}
-        {{--            // $('#table-data')--}}
-        {{--        },--}}
-        {{--        error: function (response) {--}}
+        $(document).ready(function () {
+            //crawl data
+            $.ajax({
+                url: "{{route('api.posts')}}",
+                data: "data",
+                dataType: "json",
+                data: {page: {{ request()->get('page') ?? 1 }} },
+                success: function (response) {
+                    response.data.forEach(function (each){
+                        let location = each.district + ' - ' + each.city;
+                        let remotable = each.remotable ? 'x' : '';
+                        let is_partime = each.is_partime ? 'x' : '';
+                        let range_salary = (each.min_salary && each.max_salary) ? each.min_salary + '-' + each.max_salary : '';
+                        let range_date = (each.start_date && each.end_date) ? each.start_date + '-' + each.end_date : '';
+                        let is_pinned = each.is_pinned ? 'x' : '';
+                        let created_at = convertDateToDateTime(each.created_at);
+                        $('#table-data').append($('<tr>')
+                            .append($('<td>').append(each.id))
+                            .append($('<td>').append(each.job_title))
+                            .append($('<td>').append(location))
+                            .append($('<td>').append(remotable))
+                            .append($('<td>').append(is_partime))
+                            .append($('<td>').append(range_salary))
+                            .append($('<td>').append(range_date))
+                            .append($('<td>').append(each.status))
+                            .append($('<td>').append(is_pinned))
+                            .append($('<td>').append(created_at))
+                        );
+                    });
+                    renderPagination(response.pagination);
+                },
+                error: function (response) {
 
-        {{--        }--}}
-        {{--    });--}}
-        {{--});--}}
+                }
+            });
+        });
+        $(document).on('click', '#pagination > li > a', function (event) {
+            event.preventDefault();
+            let page = $(this).text();
+            let urlParams = new URLSearchParams(window.location.search);
+            urlParams.set('page', page);
+            window.location.search = urlParams;
+        });
+        //import file excel
         $("#csv").change(function(event){
             const formData = new FormData();
             formData.append('file',$(this)[0].files[0])

@@ -15,7 +15,7 @@
         <li class="dropdown notification-list topbar-dropdown">
             <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" role="button"
                aria-haspopup="false" aria-expanded="false">
-                <img src="assets/images/flags/us.jpg" alt="user-image" class="mr-0 mr-sm-1" height="12">
+                <img src="" alt="user-image" class="mr-0 mr-sm-1" height="12">
                 <span class="align-middle d-none d-sm-inline-block">English</span> <i
                     class="mdi mdi-chevron-down d-none d-sm-inline-block align-middle"></i>
             </a>
@@ -23,25 +23,25 @@
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12">
+                    <img src="" alt="user-image" class="mr-1" height="12">
                     <span class="align-middle">German</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12">
+                    <img src="" alt="user-image" class="mr-1" height="12">
                     <span class="align-middle">Italian</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12">
+                    <img src="" alt="user-image" class="mr-1" height="12">
                     <span class="align-middle">Spanish</span>
                 </a>
 
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <img src="assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12">
+                    <img src="" alt="user-image" class="mr-1" height="12">
                     <span class="align-middle">Russian</span>
                 </a>
 
@@ -96,7 +96,7 @@
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon">
-                                                <img src="assets/images/users/avatar-2.jpg"
+                                                <img src=""
                                                      class="img-fluid rounded-circle" alt=""></div>
                                             <p class="notify-details">Cristina Pride</p>
                                             <p class="text-muted mb-0 user-msg">
@@ -117,7 +117,7 @@
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <div class="notify-icon">
-                                                <img src="assets/images/users/avatar-4.jpg"
+                                                <img src=""
                                                      class="img-fluid rounded-circle" alt=""></div>
                                             <p class="notify-details">Karen Robinson</p>
                                             <p class="text-muted mb-0 user-msg">
@@ -164,7 +164,7 @@
             <a class="nav-link dropdown-toggle nav-user arrow-none mr-0" data-toggle="dropdown" href="#"
                role="button" aria-haspopup="false" aria-expanded="false">
                                     <span class="account-user-avatar">
-                                        <img src="assets/images/users/avatar-1.jpg" alt="user-image"
+                                        <img src="" alt="user-image"
                                              class="rounded-circle">
                                     </span>
                 <span>
@@ -262,7 +262,7 @@
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <div class="media">
-                        <img class="d-flex mr-2 rounded-circle" src="assets/images/users/avatar-2.jpg"
+                        <img class="d-flex mr-2 rounded-circle" src=""
                              alt="Generic placeholder image" height="32">
                         <div class="media-body">
                             <h5 class="m-0 font-14">Erwin Brown</h5>
@@ -274,7 +274,7 @@
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <div class="media">
-                        <img class="d-flex mr-2 rounded-circle" src="assets/images/users/avatar-5.jpg"
+                        <img class="d-flex mr-2 rounded-circle" src=""
                              alt="Generic placeholder image" height="32">
                         <div class="media-body">
                             <h5 class="m-0 font-14">Jacob Deo</h5>
